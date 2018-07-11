@@ -532,7 +532,7 @@ main.l-main .page-title {
             </div>
           </li>
           <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Gifts">
-            <div class="c-menu__item__inner"><i class="fa fa-news"></i>
+            <div class="c-menu__item__inner"><i class="fa fa-newspaper-o"></i>
               <div class="c-menu-item__title"><span>Noticias</span></div>
             </div>
           </li>
@@ -547,12 +547,14 @@ main.l-main .page-title {
   </div>
 </body>
 <main class="l-main">
-  <div class="content-wrapper content-wrapper--with-bg">
+ <!-- <div class="content-wrapper content-wrapper--with-bg">
     <h1 class="page-title">Dashboard</h1>
     <div class="page-content">Contenido aquí</div>
-  </div>
+  </div> -->
+  <div id="matikbirdpath" style="overflow:auto;"></div>
 </main>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='https://use.fontawesome.com/releases/v5.0.8/js/all.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='assets/mQpath.js'></script>
 <script >var Dashboard = function () {
 	var global = {
 		tooltipOptions: {
@@ -596,6 +598,7 @@ main.l-main .page-title {
 		}
 	};
 }();
+
 
 Dashboard.init();
 //# sourceURL=app.js
