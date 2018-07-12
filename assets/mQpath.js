@@ -472,7 +472,7 @@ var routes = {
     },
     '/*' : function(req, e){
         if(!e.parent()){
-        $("#matikbirdpath").load("views/404.html", function(res){
+        $("#matikbirdpath").load("views/main.html", function(res){
                 console.log(res);
             });
     
