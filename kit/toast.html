@@ -1,0 +1,687 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/children117cl/pen/agekl" />
+
+
+<style class="cp-pen-styles">html {
+  min-height: 100%;
+  font: 12px/1 "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+
+/*btn*/
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 32px;
+  min-width: 60px;
+  padding: 10px 8px 10px;
+  margin: 0;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 1!important
+}
+
+.btn:active,
+.btn.active {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65
+}
+
+.btn {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc
+}
+
+.btn:active,
+.btn.active {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad
+}
+
+.btn-block {
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.btn-left {
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.btn-blue,
+.btn-blue:visited {
+  color: #fff;
+  background-color: #2e61bc;
+  border-color: #2e61bc;
+}
+
+.btn-blue:active,
+.btn-blue.active {
+  color: #fff;
+  background-color: #2e61bc;
+  border-color: #2e61bc
+}
+
+.btn-blue.disabled,
+.btn-blue[disabled] {
+  background-color: #428bca;
+  border-color: #357ebd
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-green:active,
+.btn-green.active {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439
+}
+
+.btn-green.disabled,
+.btn-green[disabled] {
+  background-color: #5cb85c;
+  border-color: #4cae4c
+}
+
+.btn-red {
+  color: #fff;
+  background-color: #f44;
+  border-color: #f44;
+}
+
+.btn-red:active,
+.btn-red.active {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925
+}
+
+.btn-red.disabled,
+.btn-red[disabled] {
+  color: #fff;
+  background-color: #bd362f
+}
+
+.btn-orange {
+  color: #7B660F;
+  background-color: #F5CB1E;
+  border-color: #F5CB1E;
+}
+
+.btn-orange:active,
+.btn-orange.active {
+  color: #7B660F;
+  background-color: #F5CB1E;
+  border-color: #F5CB1E;
+}
+
+.btn-orange.disabled,
+.btn-orange[disabled] {
+  color: #7B660F;
+  background-color: #F5CB1E;
+  border-color: #F5CB1E;
+}
+
+.f-block,
+#block {
+  display: none;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#block {
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.toast {
+  position: absolute;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 521;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
+  font-size: 14px;
+}
+
+.toast a {
+  cursor: pointer;
+}
+
+.toast.on,
+#block.on {
+  display: block;
+  opacity: 1;
+}
+
+.toast.on2,
+#block.on {
+  pointer-events: auto
+}
+
+
+/*.toast>div{min-width: 175px}*/
+
+.toast>div,
+.toast>.toast-list,
+.toast>.toast-confirm {
+  display: inline-block;
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #fff;
+  background: #000;
+  /*background: rgba(0,0,0,.65);*/
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .375);
+}
+
+.toast-icon {
+  display: inline-block;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.toast-list ul,
+.toast-confirm ul,
+.toast-list li,
+.toast-confirm li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toast>.toast-list,
+.toast>.toast-confirm {
+  display: block;
+  width: 260px;
+  margin: auto;
+  padding: 0;
+  line-height: 1.4;
+  background-color: #000;
+}
+
+.toast-title {
+  padding: 1.2em;
+  border-bottom: 1px solid #fff;
+  word-wrap: break-word
+}
+
+.toast-title p {
+  margin: 0;
+}
+
+.toast-list li {
+  border-bottom: 1px solid #fff
+}
+
+.toast-list li.b,
+.toast-confirm li.b {
+  font-weight: bold
+}
+
+.toast-list li a,
+.toast-confirm li a {
+  display: block;
+  padding: 1em 0;
+  color: #fff;
+}
+
+.toast-list li:last-child {
+  border: none
+}
+
+.toast-confirm ul {
+  overflow: hidden
+}
+
+.toast-confirm .toast-title {
+  text-align: center
+}
+
+.toast-confirm a {
+  font-size: 14px;
+}
+
+.toast-confirm li {
+  float: left;
+  width: 50%
+}
+
+.toast-confirm li.ok {
+  box-shadow: 0 -1px 0 1px #fff;
+  /*font-weight:bold*/
+}
+
+.toast-icon {
+  display: inline-block;
+  width: 40px;
+  font-size: 26px;
+  padding: 5px 15px 15px;
+}
+
+.toast-tick {
+  height: 34px;
+  width: 34px;
+  background-size: 34px auto;
+}
+
+.toast-warn {
+  height: 34px;
+  width: 34px;
+  background-size: 34px auto;
+}
+
+.toast-tel {
+  height: 18px;
+  width: 6em;
+  margin-bottom: 8px;
+  padding: 0 0 0 21px;
+  background: url(../images/wx/tel.png) no-repeat 0 2px;
+  background-size: 16px auto;
+  font-size: 12px;
+  position: relative;
+  font-size: 14px;
+}
+
+.toast-tel:after {
+  display: inline;
+  content: '联系客服电话';
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.toast-load {
+  display: block;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  /*background: url(../images/ajax-loader.gif) no-repeat 50%;*/
+}
+
+
+/* loader */
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(0.6);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+  }
+}
+
+.ball-rotate {
+  position: relative;
+  width: 100px;
+  height: 70px;
+}
+
+.ball-rotate > div {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+}
+
+.ball-rotate > div:first-child {
+  -webkit-animation: rotate 1s 0s cubic-bezier(.7, -.13, .22, .86) infinite;
+}
+
+.ball-rotate > div:before,
+.ball-rotate > div:after {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  content: "";
+  position: absolute;
+  opacity: .8;
+}
+
+.ball-rotate > div:before {
+  top: 0px;
+  left: -28px
+}
+
+.ball-rotate > div:after {
+  top: 0px;
+  left: 25px
+}</style></head><body>
+
+<h2>Toast</h2>
+<p><a class="btn btn-red" id="Alert">Alert</a></p>
+<p><a class="btn btn-blue" id="Loading">Loading</a></p>
+<p><a class="btn btn-green" id="Show">Show</a></p>
+<p><a class="btn btn-orange" id="Confirm">Confirm</a></p>
+<p><a class="btn" id="List">List</a></p>
+<h2>Console: <span id="console"></span></h2>
+<script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script >/*
+ * Toast
+ * Toast.show(String)
+ * Toast.loading('show'(,String))
+ * Toast.hide()
+ * Toast.alert(String)
+ * Toast.confirm()
+ * Toast.show_list()
+ */
+var Toast = {
+  isInited : false,
+  isShowed : false,
+  elem : null, $elem : null,
+  timeout : null,
+  timelong : 3000,
+
+  id : "toast", showCln : "on", ptevCln: "on on2",
+  isLoading : false, loadingHtml : "", okHtml : "", type : "",cache : null,
+  iconHtml: function(cln){return '<i class="toast-icon toast-'+cln+' iconfont icon-'+cln+'"></i>'},
+  
+  isLock: false,
+  lockId: 'block',
+
+  multiLoad: 0,
+  
+  _clearTimeout : function(){clearTimeout(this.timeout);this.timeout = null;},
+  _setTimeout : function(callback){this._clearTimeout();this.timeout = setTimeout( callback, this.timelong )},
+  // 选择用
+  _addEvent : function(type){
+	  if(!this.cache) return false;
+	  type = type || "click";
+	  var self = this,
+	  	  elem = this.cache.elem,
+	  	  callback = function(){
+		  	  self.cache.callback();
+		  	  if( self.cache.isHide ){
+		  		  self.hide();
+		  	  }
+	  	  }
+	  if( elem.attachEvent ){
+		  elem.attachEvent("on"+type, callback);
+	  }else if( elem.addEventListener ){
+		  elem.addEventListener(type, callback, false);
+	  }
+  },
+  _removeEvent : function(type){
+	  if(!this.cache) return false;
+	  type = type || "click";
+	  var elem = this.cache.elem;
+	  if( elem && elem.detachEvent ){
+		  elem.detachEvent("on"+type, this.cache.callback);
+	  }else if( elem && elem.removeEventListener ){
+		  elem.removeEventListener(type, this.cache.callback, false)
+	  }
+	  this.cache = {};
+  },
+  lock: function(){
+  	if( !this.isLock ){
+	  	this.isLock = !0;
+	  	$('#'+this.lockId).addClass('on');
+  	}
+  },
+  unlock: function(){
+  	if( this.isLock ){
+	  	this.isLock = !1;
+	  	$('#'+this.lockId).removeClass('on');
+  	}
+  },
+
+  show : function( text, type, param ){
+    if(!this.isInited||!text) return ;
+    
+    var strIcon = type ? ( (type == 1 || type == true) ? this.okHtml : this.iconHtml(type) ) + '<br>' : '',
+    	self = this,
+    	isLock = param && param.isLock,
+      css = (param && param.style) || '';
+    this.elem.innerHTML = '<div style="'+css+'">'+ strIcon + text +'</div>';
+    this.elem.className = this.id +' '+ (isLock ? this.ptevCln : this.showCln) ;
+    this.isLoading = false;
+    this._setTimeout(function(){ 
+    	if(!isLock){
+    		self.hide();
+    	} 
+    });
+    this.type = 'show';
+    if( isLock ){
+    	this.lock();
+    }else{
+    	this.unlock();
+    }
+    if( param && typeof param.callback == 'function' ) param.callback(self);
+  },
+
+  hide : function(){
+    if(!this.isInited) return ;
+    this.elem.className = this.id;
+    this.isLoading = false;
+    this._clearTimeout();
+    if(this.cache) this._removeEvent();
+    this.unlock();
+    //alert('hide');
+  },
+  
+  loading : function( action, text ){
+    if(!this.isInited) return ;
+    if( action=="hide" ) {
+    	this.multiLoad && this.multiLoad--;
+    	!this.multiLoad && this.hide();
+    	return ;
+    }
+    this._clearTimeout();
+    this.elem.innerHTML = '<div style="min-width: 100px;">'+ this.loadingHtml +'</div>';
+    this.elem.className = this.id +' '+ this.showCln;
+    this.isLoading = true;
+    
+    this.multiLoad++;
+    if( this.multiLoad>1 ){}
+
+    var spin = $('.toast-load',this.elem),
+        loadCln = 'toast-load ball-rotate';
+    if(text){
+      var tnode = '<p style="margin: 4px 0 0">'+text+'</p>';
+      spin.attr('class',loadCln+' t-load-text');
+      spin.after(tnode);
+    }else{
+    	spin.attr('class',loadCln);
+    }
+    this.type = 'loading';
+
+    this.lock();
+  },
+  /* String title, Array options[ Object { String text, String href } ], String cancel */
+  show_list : function( param, attrs ){
+	  if(!this.isInited||!param) return ;
+   attrs = attrs || '';
+	  this.isLoading = false;
+	  param.title = (param.title+"").replace(/\n/g,'<br>');
+	  var html = '<div class="toast-list">'
+		  +'<div class="toast-title" '+attrs+'>'+ param.title +'</div>'
+		  +'<ul>'
+		  + (function(){
+			  var s = '', i = 0,o,l = param.options.length;
+			  for(i;i<l;i++){if (window.CP.shouldStopExecution(1)){break;}
+				  o = param.options[i];
+				  s+='<li><a href="'+o.href+'">'+o.text+'</a></li>';
+			  }
+window.CP.exitedLoop(1);
+
+			  return s;
+		  })()
+		  + (param.cancel ? '<li><a onclick="Toast.hide()">'+param.cancel+'</a></li>' : "")
+		  +'</ul>'
+		  +'</div>';
+	  this._clearTimeout();
+	  this.elem.innerHTML = html;
+	  this.elem.className = this.id +' '+ this.ptevCln;
+	  this.type = 'show-list';
+
+	  this.lock();
+  },
+  /* confirm */
+  confirm : function(str,callback,isHide,okText,cancelText,icon){
+	  if(!this.isInited) return ;
+
+	  okText = okText || '确定';
+	  cancelText = cancelText || '取消';
+	  icon = icon || 'attention';
+
+	  this.isLoading = false;
+	  str = (str+"").replace(/\n/g,'<br>');
+	  var html = '<div class="toast-confirm">'
+		  +'<div class="toast-title">'+this.iconHtml(icon)+ '<p>'+str +'</p></div>'
+		  +'<ul>'
+      +'<li class="ok"><a>'+okText+'</a></li>'
+		  +'<li><a onclick="Toast.hide()">'+cancelText+'</a></li>'
+		  +'</ul>'
+		  +'</div>';
+	  this._clearTimeout();
+	  this.elem.innerHTML = html;
+	  this.elem.className = this.id +' '+ this.ptevCln;
+	  this.type = 'confirm';
+	  this.cache = {elem:this.elem.querySelector('.ok a'),callback:callback||this.hide,isHide:!!isHide};
+	  this._addEvent();
+
+	  this.lock();
+  },
+  /* alert */
+  alert : function(str, btnStr){
+	  if(!this.isInited) return ;
+	  this.isLoading = false;
+	  str = (str+"").replace(/\n/g,'<br>');
+	  var param = {title:str,options:[],cancel:btnStr||'确定'};
+      this.show_list(param, 'style="text-align:left"');
+	  this.lock();
+  },
+  /* warn */
+  warn : function(str){
+    this.show(str,'attention',{style:'padding:16px 25px 22px'});
+  },
+  /* tel */
+  tel : function(number){
+  	//confirm : function(str,callback,isHide,okText,cancelText,icon){
+  	var html = '<span style="font-size:17px;">'+number+'</span>';
+    this.confirm(html,function(){location.href='tel:'+number;},true,'呼叫',false,'tel');
+  },
+  
+  init : function(){
+    var t = document.createElement('div'),
+    	b = document.createElement('div');
+    t.id = this.id;
+    t.className = this.id;
+    b.id = this.lockId;
+    b.className = this.lockId;
+    document.body.appendChild(b);
+    document.body.appendChild(t);
+    this.elem = document.getElementById(this.id);
+    this.$elem = $?$('#'+this.id):null;
+    this.isInited = true;
+    //this.loadingHtml = '<i class="fa fa-spinner fa-spin toast-icon"></i>';
+    this.loadingHtml = '<div class="toast-load ball-rotate"><div></div></div>';
+    //this.okHtml = '<i class="fa fa-check toast-icon"></i>';
+    this.okHtml = '<i class="toast-icon toast-tick iconfont icon-tick"></i>';
+  }
+
+
+}
+Toast.init();
+
+// Bindings
+$(function(){
+  var timer = null;
+  $('#Alert').click(function(){
+    Toast.alert('Alert with block');
+  });
+  $('#Loading').click(function(){
+    Toast.loading('show','Now loading... Hide after 3 seconds');
+    timer = setTimeout(function(){Toast.loading('hide')},3000);
+  });
+  $('#Show').click(function(){
+    Toast.show('Show without block');
+  });
+  $('#Confirm').click(function(){
+    Toast.confirm("This is a confirm Toast", function(){
+      document.getElementById('console').innerHTML = 'Ok and Toast hide.';
+    }, true, 'OK', 'Cancel');
+  });
+  $('#List').click(function(){
+    var arr = [],title = 'First line\nSecond Line';
+    arr.push({text:'Twitter',href:'https://twitter.com/'});
+    arr.push({text:'Facebook',href:'https://www.facebook.com/'});
+    Toast.show_list({title:title,options:arr,cancel:'Cancel'});
+  });
+});
+//# sourceURL=pen.js
+</script>
+</body></html>
