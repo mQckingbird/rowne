@@ -1,0 +1,612 @@
+
+<style class="cp-pen-styles">
+.input-group input,
+.input-group input[type="radio"] + label,
+.input-group input[type="checkbox"] + label:before,
+.input-group select option,
+.input-group select {
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  color:#111;
+}
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999;
+    opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #999;
+}
+.input-group input:focus {
+  outline: 0;
+  border-color: #64ac15;
+}
+.input-group input:focus + .input-icon i {
+  color: #7ed321;
+}
+.input-group input:focus + .input-icon:after {
+  border-right-color: #7ed321;
+}
+.input-group input[type="radio"] {
+  display: none;
+}
+.input-group input[type="radio"] + label,
+.input-group select {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  float: left;
+  border-radius: 0;
+}
+.input-group input[type="radio"] + label:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.input-group input[type="radio"] + label:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.input-group input[type="radio"] + label i {
+  padding-right: 0.4em;
+}
+.input-group input[type="radio"]:checked + label,
+.input-group input:checked + label:before,
+.input-group select:focus,
+.input-group select:active {
+  background-color: #7ed321;
+  color: #fff;
+  border-color: #64ac15;
+}
+.input-group input[type="checkbox"] {
+  display: none;
+}
+.input-group input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  padding-left: 1.6em;
+}
+.input-group input[type="checkbox"] + label:before {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  display: block;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  content: "";
+}
+.input-group input[type="checkbox"] + label:after {
+  position: absolute;
+  top: 0.45em;
+  left: 0.2em;
+  font-size: 0.8em;
+  color: #fff;
+  opacity: 0;
+  font-family: FontAwesome;
+  content: "\f00c";
+}
+.input-group input:checked + label:after {
+  opacity: 1;
+}
+.input-group select {
+  height: 3.4em;
+  line-height: 2;
+}
+.input-group select:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.input-group select:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.input-group select:focus,
+.input-group select:active {
+  outline: 0;
+}
+.input-group select option {
+  background-color: #7ed321;
+  color: #fff;
+}
+.input-group {
+  margin-bottom: 1em;
+  zoom: 1;
+}
+.input-group:before,
+.input-group:after {
+  content: "";
+  display: table;
+}
+.input-group:after {
+  clear: both;
+}
+.input-group-icon {
+  position: relative;
+}
+.input-group-icon input {
+  padding-left: 4.4em;
+}
+.input-group-icon .input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.4em;
+  height: 3.4em;
+  line-height: 3.4em;
+  text-align: center;
+  pointer-events: none;
+}
+.input-group-icon .input-icon:after {
+  position: absolute;
+  top: 0.6em;
+  bottom: 0.6em;
+  left: 3.4em;
+  display: block;
+  border-right: 1px solid #e5e5e5;
+  content: "";
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.input-group-icon .input-icon i {
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.container {
+  max-width: 38em;
+  padding: 1em 3em 2em 3em;
+  margin: 0em auto;
+  background-color: #fff;
+  border-radius: 4.2px;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+.row {
+  zoom: 1;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.col-half {
+  padding-right: 10px;
+  float: left;
+  width: 50%;
+}
+.col-half:last-of-type {
+  padding-right: 0;
+}
+.col-third {
+  padding-right: 10px;
+  float: left;
+  width: 33.33333333%;
+}
+.col-third:last-of-type {
+  padding-right: 0;
+}
+@media only screen and (max-width: 540px) {
+  .col-half {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.basicBox, .swiggleBox, .checkBox {
+  width: 130px;
+  height: 65px;
+  margin: 15px auto;
+  color: #4274D3;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.15rem;
+  line-height: 65px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.basicBox svg, .swiggleBox svg, .checkBox svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.basicBox svg rect, .swiggleBox svg rect, .checkBox svg rect, .basicBox svg path, .swiggleBox svg path, .checkBox svg path, .basicBox svg polyline, .swiggleBox svg polyline, .checkBox svg polyline {
+  fill: none;
+  stroke: #4274D3;
+  stroke-width: 1;
+}
+
+.basicBox:hover svg rect, .swiggleBox:hover svg path, .checkBox:hover svg polyline {
+  stroke: #4274D3;
+}
+
+/* Basic Box */
+.basicBox svg rect {
+  stroke-dasharray: 400, 0;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.basicBox:hover svg rect {
+  stroke-width: 3;
+  stroke-dasharray: 35, 245;
+  stroke-dashoffset: 38;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+
+/* Swiggle Box */
+.swiggleBox svg path {
+  stroke-dasharray: 265, 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+.swiggleBox:hover svg path {
+  stroke-width: 3;
+  stroke-dasharray: 0, 350;
+  stroke-dashoffset: 20;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+
+/* Check Box */
+.checkBox {
+  /* Add Padding Left To Center Text */
+}
+.checkBox svg {
+  /* Presentation Purposes */
+  margin-left: -10px;
+}
+.checkBox svg rect, .checkBox svg polyline {
+  fill: none;
+  stroke: #4274D3;
+  stroke-width: 1;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.checkBox:hover svg rect {
+  stroke-width: 2;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.checkBox:hover svg polyline {
+  stroke-width: 2;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.checkBox svg .button {
+  stroke-dasharray: 400px, 0;
+}
+.checkBox:hover svg .button {
+  stroke-dasharray: 0, 400px;
+  stroke-dashoffset: 33px;
+}
+/* Check Mark Effect */
+.box, .checkMark {
+  opacity: 0;
+}
+.checkBox:hover .box {
+  -webkit-animation: boxDisplay 0.2s forwards;
+  -moz-animation: boxDisplay 0.2s forwards;
+  -ms-animation: boxDisplay 0.2s forwards;
+  -o-animation: boxDisplay 0.2s forwards;
+  animation: boxDisplay 0.2s forwards;
+  -webkit-animation-delay: 0.65s;
+  -moz-animation-delay: 0.65s;
+  -ms-animation-delay: 0.65s;
+  -o-animation-delay: 0.65s;
+  animation-delay: 0.65s;
+}
+.checkBox:hover .checkMark {
+  -webkit-animation: checkDisplay 0.2s forwards;
+  -moz-animation: checkDisplay 0.2s forwards;
+  -ms-animation: checkDisplay 0.2s forwards;
+  -o-animation: checkDisplay 0.2s forwards;
+  animation: checkDisplay 0.2s forwards;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* Check Box Display */
+@-webkit-keyframes boxDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes boxDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes boxDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes boxDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes boxDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* Check Mark Display */
+@-webkit-keyframes checkDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes checkDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes checkDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes checkDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes checkDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+</style>
+
+ <div class="content-wrapper content-wrapper--with-bg">
+    <h1 class="page-title">Configuración</h1>
+    <div class="page-content">
+
+  <form>
+    <div class="row">
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Nombre completo" id="setuser"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="E-mail" id="setmail"/>
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+     <!-- <div class="input-group input-group-icon">
+        <input type="password" placeholder="Password"/>
+        <div class="input-icon"><i class="fa fa-key"></i></div>
+      </div>-->
+    </div>
+    <div class="row">
+      <div class="col-half">
+        <h4>Fecha de nacimiento</h4>
+        <div class="input-group">
+          <div class="col-third">
+            <input type="text" placeholder="DD" id="setday"/>
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="MM" id="setmonth"/>
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="AAAA" id="setyear"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-half">
+        <h4>Género</h4>
+        <div class="input-group">
+          <input type="radio" name="gender" value="male" id="gender-male" id="setgender"/>
+          <label for="gender-male">Hombre</label>
+          <input type="radio" name="gender" value="female" id="gender-female" id="setgender"/>
+          <label for="gender-female">Mujer</label>
+        </div>
+      </div>
+    </div>
+   <!-- <div class="row">
+      <h4>Payment Details</h4>
+      <div class="input-group">
+        <input type="radio" name="payment-method" value="card" id="payment-method-card" checked="true"/>
+        <label for="payment-method-card"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label>
+        <input type="radio" name="payment-method" value="paypal" id="payment-method-paypal"/>
+        <label for="payment-method-paypal"> <span><i class="fa fa-cc-paypal"></i>Paypal</span></label>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Card Number"/>
+        <div class="input-icon"><i class="fa fa-credit-card"></i></div>
+      </div>
+      <div class="col-half">
+        <div class="input-group input-group-icon">
+          <input type="text" placeholder="Card CVC"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+      </div>
+      <div class="col-half">
+        <div class="input-group">
+          <select>
+            <option>01 Jan</option>
+            <option>02 Jan</option>
+          </select>
+          <select>
+            <option>2015</option>
+            <option>2016</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Terms and Conditions</h4>
+      <div class="input-group">
+        <input type="checkbox" id="terms"/>
+        <label for="terms">I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
+      </div>
+    </div> -->
+  </form>
+
+
+<div class="swiggleBox" onclick="guardar()">
+  Guardar
+  <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.6,0.5c0,5.4,0,61.5,0,61.5s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0
+  s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0
+  c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c0,0,0-56.1,0-61.5H0.6z"/>
+  </svg>
+</div>
+    </div>
+  </div> 
+<script>
+  symauth.getSession(function (err, response) {
+            
+                    if (err) {
+                        console.log(err);
+                      console.log("error")
+                      // network error
+                    } else if (!response.userCtx.name) {
+                      // nobody's logged in
+                      
+                      
+                    } else {
+                      // 
+                      
+                      symauth.getUser(response.userCtx.name, function (err, response) {
+                          if (err) {
+                            console.log(err);
+                            if (err.name === 'not_found') {
+                              console.log("// typo, o no tenés privilegios para ver éste usuario");
+                            } else {
+                              // some other error
+                            }
+                          } else { 
+                              $('#setuser').val(response.nombre);
+                              $('#setmail').val(response.email);
+                              $('#setday').val(response.birthday);
+                              $('#setmonth').val(response.birthmonth);
+                              $('#setyear').val(response.birthyear);
+                              if(response.genero == 'male'){
+                                $("#gender-male").attr('checked', 'checked');
+                              } else {
+                                $("#gender-female").attr('checked', 'checked');
+                              }
+                             console.log(response.nombre);
+                      }
+                        });
+                     
+                
+                    }
+                  });
+        function guardar(){
+          toasts.showInfo('Guardando...');
+           symauth.getSession(function (err, response) {
+            
+                    if (err) {
+                        console.log(err);
+                      console.log("error")
+                      // network error
+                    } else if (!response.userCtx.name) {
+                      // nobody's logged in
+                      
+                      
+                    } else {
+                      // 
+                      
+                      symauth.getUser(response.userCtx.name, function (err, response) {
+                          if (err) {
+                            console.log(err);
+                            if (err.name === 'not_found') {
+                              console.log("// typo, o no tenés privilegios para ver éste usuario");
+                            } else {
+                              // some other error
+                            }
+                          } else { 
+                            symauth.putUser(response.name, {
+                              metadata : {
+                                nombre : $('#setuser').val(),
+                                email : $('#setmail').val(),
+                                birthday : $('#setday').val(),
+                                birthmonth : $('#setmonth').val(),
+                                birthyear : $('#setyear').val(),
+                                genero : $('#setgender').val()
+                              }
+                            }, function (err, response) {
+                              // etc.
+                              if(err){
+                                toasts.showError('Ocurrio un error');
+
+                                }
+                               toasts.showSuccess('Datos actualizados');
+                              
+                            });
+
+
+                             console.log(response.nombre);
+                      }
+                        });
+                     
+                
+                    }
+                  });
+        }           
+
+
+
+</script>
+
+<!--
+
+<span class="title">Boton basico</span>
+<div class="basicBox">
+  Hover
+  <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+    <rect x='0' y='0' fill='none' width='130' height='65'/>
+  </svg>
+</div>
+
+<span class="title">Swiggle boton</span>
+<div class="swiggleBox">
+  Hover
+  <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.6,0.5c0,5.4,0,61.5,0,61.5s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0
+  s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0
+  c5.4-5.4,9.9,0,9.9,0s4.5,5.4,9.9,0c0,0,0-56.1,0-61.5H0.6z"/>
+  </svg>
+</div>
+
+<span class="title">Check Box Boton</span>
+<div class="checkBox">
+  Hover
+  <svg width="140" height="65" viewBox="0 0 140 65" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" class="button" width="128.8" height="63.9"/>
+    <rect x="0" y="22.5" class="box" width="20" height="20"/>
+    <polyline class="checkMark" points="4.5,32.6 8.7,36.8 16.5,29.1"/>
+  </svg>
+</div>
+
+-->

@@ -444,27 +444,32 @@ router.navigate('/');
 var routes = {
     '/' : function(req, e){
         $("#matikbirdpath").load("views/main.html", function(res){
-                console.log(res);
+                console.log("Main");
+            });
+    },
+    '/configuracion' : function(req, e){
+        $("#matikbirdpath").load("views/settings.html", function(res){
+                console.log("Configuracion");
             });
     },
     '/calendario' : function(req, e){
         $("#matikbirdpath").load("views/calendario.html", function(res){
-                console.log(res);
+                console.log("Calendario");
             });
     },
     '/noticias' : function(req, e){
         $("#matikbirdpath").load("views/noticias.html", function(res){
-                console.log(res);
+                console.log("Noticias");
             });
     },
     '/materias' : function(req, e){
         $("#matikbirdpath").load("views/materias.html", function(res){
-                console.log(res);
+                console.log("Materias");
             });
     },
     '/staff' : function(req, e){
         $("#matikbirdpath").load("views/staff.html", function(res){
-                console.log(res);
+                console.log("Staff");
             });
     },
     '/category/:id' : function(req, e){
