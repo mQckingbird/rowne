@@ -443,33 +443,45 @@ router.navigate('/');
 
 var routes = {
     '/' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/main.html", function(res){
+            NProgress.done();
                 console.log("Main");
             });
     },
     '/configuracion' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/settings.html", function(res){
                 console.log("Configuracion");
+                NProgress.done();
             });
     },
     '/calendario' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/calendario.html", function(res){
                 console.log("Calendario");
+                NProgress.done();
             });
     },
     '/noticias' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/noticias.html", function(res){
                 console.log("Noticias");
+                NProgress.done();
             });
     },
     '/materias' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/materias.html", function(res){
                 console.log("Materias");
+                NProgress.done();
             });
     },
     '/staff' : function(req, e){
+        NProgress.start();
         $("#matikbirdpath").load("views/staff.html", function(res){
                 console.log("Staff");
+                NProgress.done();
             });
     },
     '/category/:id' : function(req, e){
@@ -479,6 +491,7 @@ var routes = {
         if(!e.parent()){
         $("#matikbirdpath").load("views/main.html", function(res){
                 console.log(res);
+                NProgress.done();
             });
     
         }
