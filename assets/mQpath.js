@@ -477,6 +477,13 @@ var routes = {
                 NProgress.done();
             });
     },
+    '/escuelas' : function(req, e){
+        NProgress.start();
+        $("#matikbirdpath").load("views/escuelas.html", function(res){
+                console.log("Escuelas");
+                NProgress.done();
+            });
+    },
     '/staff' : function(req, e){
         NProgress.start();
         $("#matikbirdpath").load("views/staff.html", function(res){
